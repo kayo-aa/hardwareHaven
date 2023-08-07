@@ -2,9 +2,30 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.3.
 
-## Development server
+## Use
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+
+To use this project, follow the steps below:
+
+1. Clone the repository to your local machine and navigate to the project:
+
+```bash
+git clone https://github.com/kayo-aa/hardwareHaven
+cd hardwareHaven
+```
+
+2. Install the necessary dependencies and start the project:
+```bash
+npm install
+ng serve
+```
+Open your browser and visit the following address:
+http://localhost:4200
+
+The project simulates an eCommerce website for Compra Gamer. It allows you to:
+
+- Browse through all its products, filter them, and add them to a shopping cart.
+- Register by completing a form. Once completed, the 'Log In' is persistent.' es permantente
 
 ## Code scaffolding
 
