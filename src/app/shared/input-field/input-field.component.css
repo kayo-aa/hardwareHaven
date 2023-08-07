@@ -1,0 +1,149 @@
+form{
+  display: contents;
+}
+.list-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 16px - 128px);
+  /* background-color: #004683; */
+}
+
+.toInput {
+  height: calc(100% - 16px);
+}
+
+.list-container__item--button {
+  display: flex!important;
+  flex-direction: column;
+  align-content: flex-end;
+  flex-wrap: wrap;
+
+}
+
+.list-container__item--button button {
+  margin-right: 8px;
+}
+.list-container__item--button mat-icon {
+  color: #FFFFFF;
+}
+
+mat-icon{
+  color: #005baa;
+}
+
+.mdc-list-item__content {
+  background-color: #e9e9e9!important;
+}
+
+.mdc-floating.label {
+  color: #2e3036!important;
+  background-color: #004683;
+}
+
+input {
+  color: #004683!important;
+  font-weight: 500!important;
+}
+
+.list-container__item {
+  height: 100%!important;
+  padding-left: 20%;
+}
+
+mat-form-field {
+  display: flex;
+  max-width: 300px!important;
+}
+
+.item__title {
+  font-size: 64px !important;
+  letter-spacing: normal !important;
+  font-weight: 400 !important;
+  color: #005baa !important;
+  line-height: normal;
+  white-space: normal; /* Agrega esta propiedad */
+  word-wrap: break-word;
+  height: min-content;
+}
+
+.disabled-link {
+  cursor: not-allowed;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.item__title--congrats{
+  font-size: 2rem!important;
+  color: #004683;
+  white-space: normal; /* Agrega esta propiedad */
+  word-wrap: break-word;
+
+
+}
+
+mat-label {
+  color: #004683;
+}
+
+mat-hint {
+  color: #2e3036;
+  font-weight: 500;
+}
+
+
+.item__title:hover {
+  color: #004683 !important;
+  transition: color 0.3s;
+}
+
+.clickable-link {
+  cursor: pointer;
+}
+
+mat-divider {
+  margin-left: 15%;
+  margin-bottom: 36px;
+  margin-right: 35%;
+  background-color: #2e3036a2;
+}
+
+.nav__inputs {
+  display: flex;
+  align-items: center;
+  margin-left: 0px!important;
+}
+
+@media (min-width: 0px) and (max-width: 1120px) {
+  .item__title--congrats{
+  font-size: 1.5rem!important;
+  }
+  .item__title {
+    font-size: 56px !important;
+    letter-spacing: normal !important;
+    font-weight: 400 !important;
+    color: #005baa !important;
+    line-height: normal;
+    width: min-content;
+  }
+}
+
+@media (min-width: 0px) and (max-width: 980px) {
+.item__title {
+  font-size: 48px !important;
+}
+.list-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 16px);
+}
+
+}
+
+@media (max-width: 610px){
+.nav__inputs{
+  height: min-content;
+  flex-grow: 1;
+}
+}

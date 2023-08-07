@@ -1,0 +1,160 @@
+<mat-drawer-content *ngIf="stepsCounter === 1" class="nav__inputs">
+  <mat-list class="list-container">
+    <mat-list-item class="list-container__item">
+      <a (click)="changeStep($event)" class="item__title clickable-link"
+      [ngClass]="{ 'disabled-link': !userInfo.hasOwnProperty('nombre')}">Log In</a
+      >
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item class="list-container__item">
+      <a (click)="changeStep($event)" class="item__title clickable-link"
+        >Sign In</a
+      >
+    </mat-list-item>
+  </mat-list>
+</mat-drawer-content>
+
+<form [formGroup]="formPersonal" *ngIf="stepsCounter === 2">
+  <mat-drawer-content class="nav__inputs">
+    <mat-list class="list-container toInput">
+      <mat-list-item class="list-container__item">
+        <mat-form-field appearance="fill">
+          <mat-label>Nombre</mat-label>
+          <input matInput type="text" formControlName="nombre" />
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          <mat-error *ngIf="nameField?.hasError('required')">
+            Este campo es requerido
+          </mat-error>
+        </mat-form-field>
+      </mat-list-item>
+      <mat-list-item class="list-container__item">
+        <mat-form-field appearance="fill">
+          <mat-label>Apellido</mat-label>
+          <input matInput formControlName="apellido" type="text" />
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          <mat-error
+            *ngIf="
+              lastNameField?.hasError('required') && lastNameField?.touched
+            "
+          >
+            Este campo es requerido
+          </mat-error>
+        </mat-form-field>
+      </mat-list-item>
+      <mat-list-item class="list-container__item">
+        <mat-form-field appearance="fill">
+          <mat-label>DNI</mat-label>
+          <input matInput type="number" formControlName="dni" />
+          <mat-icon matSuffix>description</mat-icon>
+          <mat-error *ngIf="dniField?.hasError('required')">
+            Este campo es requerido
+          </mat-error>
+          <mat-error *ngIf="dniField?.hasError('minlengthNumber')">
+            8 caracteres mínimo
+          </mat-error>
+        </mat-form-field>
+      </mat-list-item>
+      <mat-list-item class="list-container__item list-container__item--button">
+        <button
+          mat-fab
+          (click)="changeStep($event)"
+          [disabled]="formPersonal.invalid"
+          [ngStyle]="{
+            'background-color': formPersonal.invalid ? '#004683' : '#005baa',
+            transition: 'background-color 0.4s'
+          }"
+        >
+          <mat-icon>arrow_forward</mat-icon>
+        </button>
+      </mat-list-item>
+    </mat-list>
+  </mat-drawer-content>
+</form>
+
+<form [formGroup]="formUsuario" *ngIf="stepsCounter === 3">
+  <mat-drawer-content class="nav__inputs">
+    <mat-list class="list-container toInput">
+      <mat-list-item class="list-container__item">
+        <mat-form-field appearance="fill">
+          <mat-label>Mail</mat-label>
+          <input matInput type="email" formControlName="mail" />
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          <mat-error
+            *ngIf="mailField?.hasError('required') && mailField?.touched"
+          >
+            Este campo es requerido
+          </mat-error>
+          <mat-error *ngIf="mailField?.hasError('email') && mailField?.touched">
+            Incluye una '@'
+          </mat-error>
+        </mat-form-field>
+      </mat-list-item>
+      <mat-list-item class="list-container__item">
+        <mat-form-field appearance="fill">
+          <mat-label>contraseña</mat-label>
+          <input matInput formControlName="contrasena" type="password" />
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          <mat-error
+            *ngIf="
+              passwordField?.hasError('required') && passwordField?.touched
+            "
+          >
+            Este campo es requerido
+          </mat-error>
+          <mat-error *ngIf="passwordField?.hasError('pattern')">
+            Al menos un dígito, al menos una minúscula y al menos una mayúscula.
+            8 a 16 caracteres.
+          </mat-error>
+        </mat-form-field>
+      </mat-list-item>
+      <mat-list-item class="list-container__item">
+        <mat-form-field appearance="fill">
+          <mat-label>Teléfono</mat-label>
+          <input matInput type="number" formControlName="telefono" />
+          <mat-icon matSuffix>description</mat-icon>
+          <mat-error
+            *ngIf="phoneField?.hasError('required') && phoneField?.touched"
+          >
+            Este campo es requerido
+          </mat-error>
+          <mat-error *ngIf="phoneField?.hasError('minlengthNumber')">
+            10 caracteres mínimo
+          </mat-error>
+        </mat-form-field>
+      </mat-list-item>
+
+      <mat-list-item class="list-container__item list-container__item--button">
+        <button
+          mat-fab
+          (click)="changeStep($event)"
+          [disabled]="formUsuario.invalid"
+          [ngStyle]="{
+            'background-color': formUsuario.invalid ? '#004683' : '#005baa',
+            transition: 'background-color 0.4s'
+          }"
+        >
+          <mat-icon>arrow_forward</mat-icon>
+        </button>
+      </mat-list-item>
+    </mat-list>
+  </mat-drawer-content>
+</form>
+
+<mat-drawer-content *ngIf="stepsCounter === 4" class="nav__inputs">
+  <mat-list class="list-container">
+    <mat-list-item class="list-container__item">
+      <h2 class="item__title--congrats" >Ya estas logueado, {{userInfo.nombre}}</h2>
+    </mat-list-item>
+    <mat-list-item class="list-container__item">
+      <a (click)="changePage($event)" class="item__title clickable-link"
+        >Volver al menú</a
+      >
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item class="list-container__item">
+      <a (click)="changePage($event)" class="item__title clickable-link"
+        >Ver productos</a
+      >
+    </mat-list-item>
+  </mat-list>
+</mat-drawer-content>

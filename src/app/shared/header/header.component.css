@@ -1,0 +1,40 @@
+.spacer{
+  flex: 1 1 auto;
+}
+
+mat-toolbar{
+    background-color: #E9E9E9;
+}
+
+#name{
+  color: #005BAA;
+  font-size: 1.7rem;
+}
+
+header a{
+  color: #2E3036;
+  font-size: 1.125rem;
+  margin-right: 16px;
+}
+
+mat-icon{
+  color: #2E3036;
+  font-size:28px;
+  height: 28px;
+  width: 28px;
+}
+
+.menu-button{
+  display: none;
+}
+
+@media (min-width: 0) and (max-width: 580px){
+  .menu-button{
+    display: inline-block;
+    margin-right: 18px;
+    margin-bottom: 8px;
+  }
+  .desktop-option{
+    display: none;
+  }
+}

@@ -1,0 +1,26 @@
+<header>
+  <mat-toolbar>
+    <a id="name" mat-button href="home">Hardware Haven</a>
+    <div class="spacer"></div>
+    <a class="desktop-option" href="shop" mat-button>Productos</a>
+    <a class="desktop-option" href="register" mat-button>Registrate</a>
+    <button mat-icon-button [matMenuTriggerFor]="menu" class="menu-button">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <mat-icon>keyboard</mat-icon>
+        <a href="shop" mat-button>Productos</a>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>login</mat-icon>
+        <a href="register" mat-button>Registrate</a>
+      </button>
+    </mat-menu>
+    <div class="demo-section">
+      <mat-icon [matBadge]="cartCounter" matBadgeColor="warn"
+        >shopping_cart</mat-icon
+      >
+    </div>
+  </mat-toolbar>
+</header>

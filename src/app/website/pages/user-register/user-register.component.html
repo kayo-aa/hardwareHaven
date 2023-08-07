@@ -1,0 +1,20 @@
+<div class="register-container">
+  <mat-drawer-container class="register-drawer-container">
+    <div class="tablet-text-content">
+        <h4>Empezá hoy</h4>
+        <h2>Registrate o logueate para ingresar a tu cuenta.</h2>
+        <h3>{{ stepsCounter }}/4</h3>
+      </div>
+    <mat-drawer class="mat-drawer__nav" mode="side" opened>
+      <div class="nav__text-content">
+        <h4>Empezá hoy</h4>
+        <h2>Registrate o logueate para ingresar a tu cuenta.</h2>
+        <h3>{{ stepsCounter }}/4</h3>
+      </div>
+    </mat-drawer>
+    <app-input-field class="test" (stepsCounterEmitter)="changeStep($event)" [stepsCounter]="stepsCounter"></app-input-field>
+  </mat-drawer-container>
+</div>
+
+
+  

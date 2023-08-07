@@ -1,0 +1,60 @@
+footer {
+  display: flex;
+  justify-content: space-around; 
+  align-items: center; 
+  background-color: #E9E9E9;
+  padding: 16px; 
+}
+
+
+footer h2 {
+  flex: 2; 
+  max-width: fit-content; 
+  color: #005BAA;
+  font-size: 1.7rem;
+}
+
+
+.store ul,
+.help ul,
+.social ul {
+  text-align: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.store h3,
+.help h3,
+.social h3 {
+
+  color: #2E3036;
+  font-size: 1.125rem;
+  font-weight: 500;
+  margin: 8px;
+}
+
+.store ul li,
+.help ul li,
+.social ul li {
+    color: #2E3036;
+    font-weight: 400px;
+    margin-bottom: 8px; 
+}
+
+.store h3,
+.help h3,
+.social h3 {
+  text-align: center;
+}
+
+@media (min-width: 0) and (max-width: 610px) {
+  footer{
+    flex-direction: column;
+  }
+  .store ul,
+  .help ul,
+  .social ul{
+    margin-bottom: 36px;
+  }
+}
